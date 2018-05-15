@@ -15,7 +15,7 @@ app.listen(8888);
 const url = 'http://localhost:8888';
 
 describe('express', function() {
-  this.timeout(6500);
+  this.timeout(10000);
   beforeEach(() => {
     nightmare = new Nightmare();
   });
@@ -64,7 +64,9 @@ describe('express', function() {
     .wait('div.alert.alert-success')
     .evaluate(() => document.querySelector('div.alert.alert-success').innerText)
     .end()
-    .then(el => expect(el).to.equal('The total change due is $6.99'))
+    .then(el => {
+      expect(el).to.equal('The total change due is $6.99')
+      done() })
   );
 
   it('should calculate individual change correctly', () =>
@@ -91,7 +93,8 @@ describe('express', function() {
         .keys(expected)
         .map((key, i) => expect(results[i]).to.equal(expected[key], `Expected ${expected[key]} ${key}, saw ${results[i]} instead.`));
 
-      return Promise.all(promises);
+      return Promise.all(promises)
+        .then(res => done());
     })
   );
 });

@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">  
   <title>Change Calculator</title>
 
   <style>
@@ -21,56 +23,51 @@
       border: 1px solid white;
     }
 
-    .container-1 {
-      display: flex;
-      flex-direction: row;
+    .container-fluid {
       color: black;
-      align-items: flex-start;
+      border: dimgray solid;
+      width:100%;
     }
 
-    .container-2 {
+    row {
+      display: flex;
+    }
+    .alert {
       padding-top: 20px;
     }
 
     .container-3 {
-      display: flex;
       padding-top: 10px;
       padding-bottom: 20px;
+      display: flex;
     }
 
     .container-4 {
-      display: flex;
       padding-top: 10px;
       padding-bottom: 20px;
+      display: flex;
     }
 
 
-    .col-md-4 {
+    .span4 {
       background-color:rgb(243, 240, 240);
-
       border-radius: 5px;
       padding-bottom: 20px;
-      margin-left: 15px;
-      margin-right: 15px;
-
+      margin:auto;
     }
 
-    .col-md-8 {
+    .span8 {
       background-color:white;
-
       border-radius: 5px;
-      margin-left: 15px;
-      margin-right: 15px;
+      margin:auto;
 
     }
 
     .input{
       background-color:white;
-
-    }
-
-    .output{
-
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     .container-1 div{
@@ -85,9 +82,11 @@
       margin-left: 10px;
       margin-right: 10px;
       text-align: center;
+      width: 150px;
+      height: 150px;
     }
 
-    .output-header {
+    .alert-success {
       text-align: center;
       background-color:rgb(118, 226, 154);
       color:forestgreen;
@@ -102,46 +101,7 @@
 </head>
 
 <body>
-  <div id="root">
-  <h1>Change Calculator</h1>
-  <hr></hr>
-
-  <div class="container-1">
-    <div class="col-md-4" class="rounded">
-      <p>Enter Information</p>
-      <div class="input">
-        <h5>How much is due?</h5>
-        <input />
-        <h5>How much was received?</h5>
-        <input />
-      </div><br>
-      <button type="button" class="btn btn-primary btn-lg btn-block">Calculate</button>
-  </div>
-  <div class="col-md-8">
-      <div class="output">
-        <div class="container-2">
-          <div class="output-header">
-            <p>The total change due is: </p>
-          </div>
-        </div>
-        <div class="container-3">
-          <div class="denominations">Twenties<br><br><br><br></div>
-          <div class="denominations">Tens<br><br><br><br></div>
-          <div class="denominations">Fives<br><br><br><br></div>
-          <div class="denominations">Ones<br><br><br><br></div>
-      </div>
-      <div class="container-4">
-          <div class="denominations">Quarters<br><br><br><br></div>
-          <div class="denominations">Dimes<br><br><br><br></div>
-          <div class="denominations">Nickels<br><br><br><br></div>
-          <div class="denominations">Pennies<br><br><br><br></div>
-      </div>
-    </div>
-
-</div>
-
-
-
+  <div id="root"></div>
   <script src="bundle.js"></script>
 </body>
 
