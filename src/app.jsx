@@ -79,7 +79,6 @@ calculateChange(){
           this.setState({ pennies: pennyAmount});
           changeAmount = (changeAmount%.01).toFixed(2);
            
-          console.log(this.state);
       }    
     }
 
@@ -89,18 +88,24 @@ return (
 <div className="container-fluid">
 <h1>Change Calculator</h1>
 <hr></hr><br></br>
-<div className="row">
-  <div className="span4">
+<div className="col-md-12" className="twelveColumns">
+  <div className="col-md-4">
       <p>Enter Information</p>
-      <div className="input">
+      <div className="row">
+      <div className="col-md-12" className="input">
+        <br></br>
         <h5>How much is due?</h5>
-        <input type='number' name='amountDue' defaultValue={this.state.amountDue} onChange={this.changeAmountDue}/>
+        <input type='number' name='amountDue' defaultValue={this.state.amountDue} onChange={this.changeAmountDue}/><br></br><br></br>
         <h5>How much was received?</h5>
         <input type='number' name='amountReceived' defaultValue={this.state.amountReceived} onChange={this.changeAmountReceived}/>
-      </div><br></br>
+        <br></br>
+        <br></br>
+      </div>
+      </div>
+      <br></br>
       <button type="button" className="btn btn-primary btn-lg btn-block" onClick= {this.calculateChange}>Calculate</button>
   </div>
-  <div className="span8">
+  <div className="col-md-8">
       <div className="output">
         <div className="alert">
           <div className="alert-success">

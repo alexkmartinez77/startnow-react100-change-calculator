@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">  
   <title>Change Calculator</title>
-
   <style>
 
     body {
@@ -25,12 +24,14 @@
 
     .container-fluid {
       color: black;
-      border: dimgray solid;
       width:100%;
+
     }
 
-    row {
+    .twelveColumns {
       display: flex;
+      grid-column-gap: 1em;
+
     }
     .alert {
       padding-top: 20px;
@@ -49,14 +50,15 @@
     }
 
 
-    .span4 {
+    .col-md-4 {
       background-color:rgb(243, 240, 240);
       border-radius: 5px;
       padding-bottom: 20px;
-      margin:auto;
+      margin: auto;
+      grid-column-gap: 1em;
     }
 
-    .span8 {
+    .col-md-8 {
       background-color:white;
       border-radius: 5px;
       margin:auto;
@@ -65,13 +67,9 @@
 
     .input{
       background-color:white;
-      position: relative;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .container-1 div{
-      border: 0px #ccc solid;
+      width:100%;
+      padding-left: 20px;
+      padding-right:20px;
     }
 
     .denominations {
@@ -79,11 +77,11 @@
       padding: 10px;
       flex: 1;
       border-radius: 5px;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
       text-align: center;
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
     }
 
     .alert-success {
