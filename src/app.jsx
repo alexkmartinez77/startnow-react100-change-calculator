@@ -109,7 +109,7 @@ return (
 </div>
   <div className="col-md-8 results-wrapper p-5">
       <div className="panel panel-default">
-      <div className="panel=body">
+      <div className="panel-body">
         <div className="alert-success">The total change due is: ${this.state.changeDue}</div> 
         <div className="container-3">
           <div className="denominations"><h5>Twenties</h5><p>{this.state.twenties}</p></div>
