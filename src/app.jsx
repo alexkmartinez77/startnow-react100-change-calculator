@@ -16,7 +16,8 @@ class App extends Component {
     changeDue:'0',
     amountDue: '',
     amountReceived: '',
-    },
+    };
+    
     
     this.changeAmountDue = this.changeAmountDue.bind(this);
     this.changeAmountReceived = this.changeAmountReceived.bind(this);
@@ -88,12 +89,12 @@ return (
 <div className="container-fluid">
 <h1>Change Calculator</h1>
 <hr></hr><br></br>
-<div className="col-md-12" className="twelveColumns">
-  <div className="col-md-4">
-      <p>Enter Information</p>
-      <div className="row">
-      <div className="col-md-12" className="input">
-        <br></br>
+<div className="row" className="col-md-12">
+  <div className="col-md-4 p-5">
+      <div className="panel">
+      <div className="panel panel-default">
+      <div className="panel-heading" className="input">Enter Information</div>
+        <div className="panel-body">
         <h5>How much is due?</h5>
         <input type='number' name='amountDue' defaultValue={this.state.amountDue} onChange={this.changeAmountDue}/><br></br><br></br>
         <h5>How much was received?</h5>
@@ -101,17 +102,15 @@ return (
         <br></br>
         <br></br>
       </div>
-      </div>
       <br></br>
-      <button type="button" className="btn btn-primary btn-lg btn-block" onClick= {this.calculateChange}>Calculate</button>
+      <button type="button" className="btn btn-success btn-lg btn-block" onClick= {this.calculateChange}>Calculate</button>
   </div>
-  <div className="col-md-8">
-      <div className="output">
-        <div className="alert">
-          <div className="alert-success">
-            <p>The total change due is: ${this.state.changeDue} </p>
-          </div>
-        </div>
+</div>
+</div>
+  <div className="col-md-8 results-wrapper p-5">
+      <div className="panel panel-default">
+      <div className="panel=body">
+        <div className="alert-success">The total change due is: ${this.state.changeDue}</div> 
         <div className="container-3">
           <div className="denominations"><h5>Twenties</h5><p>{this.state.twenties}</p></div>
           <div className="denominations"><h5>Tens</h5><p>{this.state.tens}</p></div>
@@ -125,6 +124,7 @@ return (
           <div className="denominations"><h5>Pennies</h5><p>{this.state.pennies}</p></div>
         </div>
       </div>
+    </div>
     </div>
     </div>
   </div>
